@@ -10,4 +10,4 @@ import deepmanagerhelper as dmh
 
 class BaseTest(unittest.TestCase):
     def test_nothing(self):
-        self.assertEqual(2, 1+1)
+        self.assertEqual(2, dmh.sum(1, 1))
