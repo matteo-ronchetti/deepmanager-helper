@@ -48,7 +48,13 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            nosetests
+            nosetests --with-coverage --cover-erase --cover-html
+            
+      - run:
+          name: coveralls
+          command: |
+            . venv/bin/activate
+            coveralls
 
       - store_artifacts:
           path: test-reports
