@@ -47,15 +47,10 @@ jobs:
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
-            nosetests --with-coverage --cover-erase --cover-html
-            
-      - run:
-          name: coveralls
-          command: |
             export COVERALLS_REPO_TOKEN=vfc9LzWG9PrIkloMT3Vnc28goQLt3rKCb
             . venv/bin/activate
-            coveralls
+            nosetests --with-coverage --cover-erase --cover-html --cover-package=deepmanagerhelper
+            coveralls            
 
       - store_artifacts:
           path: test-reports
